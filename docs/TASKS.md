@@ -14,7 +14,7 @@
 **진행 상황**: 
 - ✅ 완료: 0개
 - 🔄 진행중: 0개  
-- ⏳ 대기중: 48개
+- ⏳ 대기중: 33개
 
 ---
 
@@ -560,21 +560,43 @@
 
 ---
 
-### TASK-017: Standard Calculator 페이지
+### TASK-017: Keypad 컴포넌트
 **우선순위**: P0  
-**예상 시간**: 6-8시간  
-**의존성**: TASK-015, TASK-016, TASK-012  
+**예상 시간**: 3-4시간  
+**의존성**: TASK-015  
+**브랜치**: `feature/keypad-component`
+
+**작업 내용**:
+- [ ] `src/components/calculator/Keypad/Keypad.tsx` 작성
+- [ ] 버튼 레이아웃 구성 (4x4 그리드)
+- [ ] 버튼 클릭 이벤트 핸들러
+- [ ] Props 인터페이스 정의
+  - [ ] `onButtonClick: (value: string) => void`
+  - [ ] `disabled: boolean`
+
+**인수 조건**:
+- 모든 버튼 정상 렌더링
+- 클릭 이벤트 전달
+- 반응형 그리드 레이아웃
+
+**관련 FR**: FR-1~FR-3
+
+---
+
+### TASK-018: Standard Calculator 페이지
+**우선순위**: P0  
+**예상 시간**: 3-4시간  
+**의존성**: TASK-017, TASK-016, TASK-012  
 **브랜치**: `feature/standard-calculator`
 
 **작업 내용**:
 - [ ] `src/pages/StandardPage.tsx` 작성
-- [ ] `src/components/calculator/Keypad/Keypad.tsx` 작성
 - [ ] 레이아웃 구성
   - [ ] Header (모드 표시)
-  - [ ] Display
-  - [ ] Keypad (4x4 그리드)
+  - [ ] Display 컴포넌트 통합
+  - [ ] Keypad 컴포넌트 통합
 - [ ] Store 연동
-- [ ] 버튼 클릭 핸들러
+- [ ] 계산 로직 연결
 
 **인수 조건**:
 - 기본 계산 동작
@@ -585,25 +607,48 @@
 
 ---
 
-### TASK-018: Scientific Calculator 페이지
+### TASK-019: FunctionGrid 컴포넌트
 **우선순위**: P0  
-**예상 시간**: 8-10시간  
-**의존성**: TASK-015, TASK-016, TASK-012  
+**예상 시간**: 4-5시간  
+**의존성**: TASK-015  
+**브랜치**: `feature/function-grid`
+
+**작업 내용**:
+- [ ] `src/components/calculator/FunctionGrid/FunctionGrid.tsx` 작성
+- [ ] `src/components/calculator/ModeSelector/ModeSelector.tsx` 작성
+- [ ] 공학 함수 버튼 그리드 (4x4)
+- [ ] DEG/RAD 토글 컴포넌트
+- [ ] 2nd 버튼 컴포넌트
+- [ ] 함수 버튼 매핑
+  - [ ] 삼각함수 (sin, cos, tan)
+  - [ ] 로그 함수 (ln, log)
+  - [ ] 거듭제곱 (x², xʸ, √)
+
+**인수 조건**:
+- 모든 함수 버튼 렌더링
+- DEG/RAD 토글 동작
+- 2nd 함수 전환 동작
+
+**관련 FR**: FR-4~FR-9
+
+---
+
+### TASK-020: Scientific Calculator 페이지
+**우선순위**: P0  
+**예상 시간**: 4-5시간  
+**의존성**: TASK-019, TASK-016, TASK-012  
 **브랜치**: `feature/scientific-calculator`
 
 **작업 내용**:
 - [ ] `src/pages/ScientificPage.tsx` 작성
-- [ ] `src/components/calculator/FunctionGrid/FunctionGrid.tsx` 작성
-- [ ] `src/components/calculator/ModeSelector/ModeSelector.tsx` 작성
 - [ ] 레이아웃 구성
   - [ ] Header (뒤로가기)
   - [ ] Function Input
-  - [ ] DEG/RAD 토글
-  - [ ] 2nd 버튼
-  - [ ] Function Grid (4x4)
+  - [ ] FunctionGrid 컴포넌트 통합
+  - [ ] ModeSelector 컴포넌트 통합
   - [ ] Return 버튼
 - [ ] Store 연동
-- [ ] 함수 버튼 매핑
+- [ ] 공학 계산 로직 연결
 
 **인수 조건**:
 - 모든 공학 함수 동작
@@ -615,25 +660,47 @@
 
 ---
 
-### TASK-019: History 페이지
+### TASK-021: HistoryList 컴포넌트 (가상 스크롤)
 **우선순위**: P0  
-**예상 시간**: 8-10시간  
+**예상 시간**: 4-5시간  
 **의존성**: TASK-013  
+**브랜치**: `feature/history-list`
+
+**작업 내용**:
+- [ ] `src/components/history/HistoryList/HistoryList.tsx` 작성
+- [ ] `src/components/history/HistoryItem/HistoryItem.tsx` 작성
+- [ ] `src/components/history/SearchBar/SearchBar.tsx` 작성
+- [ ] 가상 스크롤 적용 (@tanstack/react-virtual)
+- [ ] 날짜별 그룹화 로직
+- [ ] 검색 필터링 기능
+
+**인수 조건**:
+- 가상 스크롤 동작
+- 날짜별 그룹화 표시
+- 검색 기능 동작
+- 1000개 이상 항목 성능 테스트
+
+**관련 FR**: FR-11~FR-15
+
+---
+
+### TASK-022: History 페이지
+**우선순위**: P0  
+**예상 시간**: 4-5시간  
+**의존성**: TASK-021  
 **브랜치**: `feature/history-page`
 
 **작업 내용**:
 - [ ] `src/pages/HistoryPage.tsx` 작성
-- [ ] `src/components/history/HistoryList/HistoryList.tsx` 작성
-- [ ] `src/components/history/HistoryItem/HistoryItem.tsx` 작성
-- [ ] `src/components/history/SearchBar/SearchBar.tsx` 작성
 - [ ] 레이아웃 구성
   - [ ] Header (Clear 버튼)
-  - [ ] SearchBar
-  - [ ] HistoryList (날짜별 그룹)
+  - [ ] SearchBar 컴포넌트 통합
+  - [ ] HistoryList 컴포넌트 통합
   - [ ] FAB (계산기 이동)
   - [ ] BottomNav
-- [ ] 가상 스크롤 적용 (@tanstack/react-virtual)
-- [ ] 검색 기능 구현
+- [ ] Store 연동
+- [ ] 항목 클릭 시 계산식 로드
+- [ ] Clear All 기능
 
 **인수 조건**:
 - 날짜별 그룹화 표시
@@ -646,41 +713,62 @@
 
 ---
 
-### TASK-020: Unit Converter 페이지
+### TASK-023: ConversionCard 컴포넌트
 **우선순위**: P0  
-**예상 시간**: 8-10시간  
+**예상 시간**: 4-5시간  
 **의존성**: TASK-009  
+**브랜치**: `feature/conversion-card`
+
+**작업 내용**:
+- [ ] `src/components/converter/ConversionCard/ConversionCard.tsx` 작성
+- [ ] `src/components/converter/CategoryTabs/CategoryTabs.tsx` 작성
+- [ ] Input/Result 카드 UI
+- [ ] 단위 드롭다운 컴포넌트
+- [ ] 스왈 버튼 컴포넌트
+- [ ] 실시간 변환 로직
+- [ ] 복사 기능
+
+**인수 조건**:
+- Input/Result 카드 렌더링
+- 단위 선택 동작
+- 스왈 기능 동작
+- 실시간 변환 표시
+
+**관련 FR**: FR-18~FR-21
+
+---
+
+### TASK-024: Unit Converter 페이지
+**우선순위**: P0  
+**예상 시간**: 4-5시간  
+**의존성**: TASK-023  
 **브랜치**: `feature/converter-page`
 
 **작업 내용**:
 - [ ] `src/pages/ConverterPage.tsx` 작성
 - [ ] `src/components/converter/UnitConverter/UnitConverter.tsx` 작성
-- [ ] `src/components/converter/CategoryTabs/CategoryTabs.tsx` 작성
-- [ ] `src/components/converter/ConversionCard/ConversionCard.tsx` 작성
 - [ ] 레이아웃 구성
   - [ ] Header
-  - [ ] CategoryTabs (가로 스크롤)
-  - [ ] Input Card
-  - [ ] Swap Button
-  - [ ] Result Card
+  - [ ] CategoryTabs 컴포넌트 통합 (가로 스크롤)
+  - [ ] ConversionCard 컴포넌트 통합
   - [ ] Keypad
-- [ ] 실시간 변환 구현
-- [ ] 단위 드롭다운 구현
+- [ ] Store 연동
+- [ ] 카테고리 전환 로직
 
 **인수 조건**:
 - 5개 카테고리 전환 동작
 - 실시간 변환 동작
-- 스왑 기능 동작
+- 스왈 기능 동작
 - 복사 기능 동작
 
 **관련 FR**: FR-18~FR-21
 
 ---
 
-### TASK-021: Navigation & Layout
+### TASK-025: Navigation & Layout
 **우선순위**: P0  
 **예상 시간**: 4-5시간  
-**의존성**: TASK-017~TASK-020  
+**의존성**: TASK-018, TASK-020, TASK-022, TASK-024  
 **브랜치**: `feature/navigation`
 
 **작업 내용**:
@@ -706,110 +794,62 @@
 
 ## 🔗 Phase 7: 커스텀 훅
 
-### TASK-022: useCalculator Hook
+### TASK-026: 코어 커스텀 훅 구현
 **우선순위**: P0  
-**예상 시간**: 3-4시간  
-**의존성**: TASK-012  
-**브랜치**: `feature/use-calculator-hook`
+**예상 시간**: 8-10시간  
+**의존성**: TASK-012, TASK-013, TASK-009  
+**브랜치**: `feature/core-hooks`
 
 **작업 내용**:
 - [ ] `src/hooks/useCalculator.ts` 작성
-- [ ] Store 연동
-- [ ] 버튼 클릭 핸들러 구현
-- [ ] 에러 처리
-
-**인수 조건**:
-- Store와 정상 연동
-- 계산 로직 동작
-
-**관련 FR**: FR-1~FR-10
-
----
-
-### TASK-023: useHistory Hook
-**우선순위**: P0  
-**예상 시간**: 3-4시간  
-**의존성**: TASK-013  
-**브랜치**: `feature/use-history-hook`
-
-**작업 내용**:
+  - [ ] Store 연동
+  - [ ] 버튼 클릭 핸들러 구현
+  - [ ] 에러 처리
 - [ ] `src/hooks/useHistory.ts` 작성
-- [ ] CRUD 작업 구현
-- [ ] 검색 로직
-- [ ] 날짜 그룹화 로직
-
-**인수 조건**:
-- 히스토리 관리 동작
-- 검색 필터링 동작
-
-**관련 FR**: FR-11~FR-15
-
----
-
-### TASK-024: useConverter Hook
-**우선순위**: P0  
-**예상 시간**: 3-4시간  
-**의존성**: TASK-009  
-**브랜치**: `feature/use-converter-hook`
-
-**작업 내용**:
+  - [ ] CRUD 작업 구현
+  - [ ] 검색 로직
+  - [ ] 날짜 그룹화 로직
 - [ ] `src/hooks/useConverter.ts` 작성
-- [ ] 변환 로직 구현
-- [ ] 카테고리 관리
-- [ ] 최근 사용 단위 저장
+  - [ ] 변환 로직 구현
+  - [ ] 카테고리 관리
+  - [ ] 최근 사용 단위 저장
 
 **인수 조건**:
-- 단위 변환 동작
-- 카테고리 전환 동작
+- useCalculator: Store 연동 및 계산 로직 동작
+- useHistory: 히스토리 관리 및 검색 필터링 동작
+- useConverter: 단위 변환 및 카테고리 전환 동작
 
-**관련 FR**: FR-18~FR-21
+**관련 FR**: FR-1~FR-21
 
 ---
 
-### TASK-025: useKeyboard Hook
+### TASK-027: 유틸리티 훅 구현
 **우선순위**: P1  
-**예상 시간**: 2-3시간  
-**의존성**: TASK-022  
-**브랜치**: `feature/use-keyboard-hook`
+**예상 시간**: 4-5시간  
+**의존성**: TASK-026, TASK-014  
+**브랜치**: `feature/utility-hooks`
 
 **작업 내용**:
 - [ ] `src/hooks/useKeyboard.ts` 작성
-- [ ] 키보드 이벤트 리스너
-- [ ] 키 매핑 (숫자, 연산자, Enter, Escape 등)
-- [ ] 단축키 지원
-
-**인수 조건**:
-- 키보드 입력 동작
-- Enter → 계산
-- Escape → 초기화
-
-**관련 FR**: FR-26
-
----
-
-### TASK-026: useTheme Hook
-**우선순위**: P1  
-**예상 시간**: 2-3시간  
-**의존성**: TASK-014  
-**브랜치**: `feature/use-theme-hook`
-
-**작업 내용**:
+  - [ ] 키보드 이벤트 리스너
+  - [ ] 키 매핑 (숫자, 연산자, Enter, Escape 등)
+  - [ ] 단축키 지원
 - [ ] `src/hooks/useTheme.ts` 작성
-- [ ] 테마 토글 구현
-- [ ] 시스템 설정 감지
-- [ ] DOM 클래스 업데이트
+  - [ ] 테마 토글 구현
+  - [ ] 시스템 설정 감지
+  - [ ] DOM 클래스 업데이트
 
 **인수 조건**:
-- 다크/라이트 모드 전환
-- 시스템 설정 반영
+- useKeyboard: 키보드 입력 동작, Enter → 계산, Escape → 초기화
+- useTheme: 다크/라이트 모드 전환, 시스템 설정 반영
 
-**관련 FR**: FR-23, FR-24
+**관련 FR**: FR-23, FR-24, FR-26
 
 ---
 
 ## ✅ Phase 8: 테스트 & 품질
 
-### TASK-027: 통합 테스트 작성 (코어 로직만)
+### TASK-028: 통합 테스트 작성 (코어 로직만)
 **우선순위**: P0  
 **예상 시간**: 4-5시간  
 **의존성**: TASK-012, TASK-013  
@@ -834,10 +874,10 @@
 
 ---
 
-### TASK-028: 접근성 개선
+### TASK-029: 접근성 개선
 **우선순위**: P1  
 **예상 시간**: 4-6시간  
-**의존성**: TASK-021  
+**의존성**: TASK-025  
 **브랜치**: `feat/accessibility`
 
 **작업 내용**:
@@ -867,10 +907,10 @@
 
 ---
 
-### TASK-029: 성능 최적화
+### TASK-030: 성능 최적화
 **우선순위**: P1  
 **예상 시간**: 4-6시간  
-**의존성**: TASK-021  
+**의존성**: TASK-025  
 **브랜치**: `feat/performance`
 
 **작업 내용**:
@@ -896,10 +936,10 @@
 
 ## 🚀 Phase 9: 배포 & 마무리
 
-### TASK-030: 프로덕션 빌드 설정
+### TASK-031: 프로덕션 빌드 설정
 **우선순위**: P0  
 **예상 시간**: 3-4시간  
-**의존성**: TASK-029  
+**의존성**: TASK-030  
 **브랜치**: `feat/production-build`
 
 **작업 내용**:
@@ -923,10 +963,10 @@
 
 ---
 
-### TASK-031: GitHub Pages 배포
+### TASK-032: GitHub Pages 배포
 **우선순위**: P0  
 **예상 시간**: 2-3시간  
-**의존성**: TASK-030  
+**의존성**: TASK-031  
 **브랜치**: `feat/github-pages`
 
 **작업 내용**:
@@ -950,10 +990,10 @@
 
 ---
 
-### TASK-032: 문서화
+### TASK-033: 문서화
 **우선순위**: P1  
 **예상 시간**: 4-6시간  
-**의존성**: TASK-031  
+**의존성**: TASK-032  
 **브랜치**: `docs/final`
 
 **작업 내용**:
@@ -980,8 +1020,8 @@
 ## 📊 진행 상황 추적
 
 ### 우선순위별 작업 수
-- **P0 (필수)**: 28개
-- **P1 (중요)**: 4개
+- **P0 (필수)**: 27개
+- **P1 (중요)**: 6개
 - **P2 (선택)**: 0개
 
 ### Phase별 작업 수
@@ -990,14 +1030,19 @@
 - Phase 3 (단위 변환): 1개
 - Phase 4 (저장소): 2개
 - Phase 5 (상태 관리): 3개
-- Phase 6 (UI): 7개
-- Phase 7 (훅): 5개
+- Phase 6 (UI): 11개 (분리됨: 컴포넌트 + 페이지)
+- Phase 7 (훅): 2개 (통합됨)
 - Phase 8 (테스트): 3개
 - Phase 9 (배포): 3개
 
 ### 예상 총 소요 시간
-- **최소**: 120시간 (15일, 하루 8시간 기준)
-- **최대**: 160시간 (20일, 하루 8시간 기준)
+- **최소**: 125시간 (16일, 하루 8시간 기준)
+- **최대**: 165시간 (21일, 하루 8시간 기준)
+
+### 주요 변경 사항
+- ✅ **큰 UI 페이지 분리**: Standard, Scientific, History, Converter 페이지를 컴포넌트 + 페이지로 분리 (8-10시간 → 4-5시간 x 2)
+- ✅ **커스텀 훅 통합**: useCalculator/useHistory/useConverter를 하나로 통합 (3-4시간 x 3 → 8-10시간)
+- ✅ **유틸리티 훅 통합**: useKeyboard/useTheme를 하나로 통합 (2-3시간 x 2 → 4-5시간)
 
 ---
 
