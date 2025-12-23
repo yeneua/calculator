@@ -43,7 +43,7 @@ jobs:
         run: npm run lint
       
       - name: Build
-        run: npm run build
+        run: npx vite build
         env:
           VITE_APP_NAME: Engineering Calculator
           VITE_ENABLE_ANALYTICS: true
