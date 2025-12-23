@@ -29,7 +29,7 @@ interface ButtonDef {
 const buttonLayout: ButtonDef[][] = [
     [
         { value: 'C', variant: 'special', label: 'C' },
-        { value: 'backspace', variant: 'special', icon: 'backspace' },
+        { value: '', variant: 'special', icon: 'backspace' },
         { value: '%', variant: 'operator', label: '%' },
         { value: '/', variant: 'operator', label: '÷' },
     ],

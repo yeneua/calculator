@@ -38,8 +38,8 @@ const variantStyles: Record<ButtonVariant, string> = {
         active:bg-gray-300 dark:active:bg-gray-600
     `,
     operator: `
-        bg-primary-500 dark:bg-primary-600
-        text-white dark:text-white
+        bg-gray-500 dark:bg-gray-600
+        text-gray-900 dark:text-gray-100
         hover:bg-primary-600 dark:hover:bg-primary-700
         active:bg-primary-700 dark:active:bg-primary-800
     `,
