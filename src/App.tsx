@@ -58,7 +58,7 @@ function App() {
             font-medium
             transition-all
             ${currentPage === 'standard'
-              ? 'bg-primary-500 text-white'
+              ? 'bg-gray-500 text-white'
               : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700'
             }
           `}
@@ -74,7 +74,7 @@ function App() {
             font-medium
             transition-all
             ${currentPage === 'scientific'
-              ? 'bg-primary-500 text-white'
+              ? 'bg-gray-500 text-white'
               : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700'
             }
           `}
@@ -90,7 +90,7 @@ function App() {
             font-medium
             transition-all
             ${currentPage === 'history'
-              ? 'bg-primary-500 text-white'
+              ? 'bg-gray-500 text-white'
               : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700'
             }
           `}
@@ -106,7 +106,7 @@ function App() {
             font-medium
             transition-all
             ${currentPage === 'converter'
-              ? 'bg-primary-500 text-white'
+              ? 'bg-gray-500 text-white'
               : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700'
             }
           `}
