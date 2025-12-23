@@ -83,7 +83,7 @@ export const CategoryTabs: React.FC<CategoryTabsProps> = ({
                                 transition-all
                                 whitespace-nowrap
                                 ${isActive
-                                    ? 'bg-primary-500 text-white shadow-md'
+                                    ? 'bg-gray-200 shadow-md'
                                     : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700'
                                 }
                                 hover:shadow-lg

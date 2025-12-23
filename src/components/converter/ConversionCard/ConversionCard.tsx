@@ -203,11 +203,15 @@ export const ConversionCard: React.FC<ConversionCardProps> = ({
                 <button
                     onClick={handleSwap}
                     className="
-                        p-3
+                        w-14
+                        h-14
+                        flex
+                        items-center
+                        justify-center
                         rounded-full
-                        bg-primary-500
+                        bg-gray-400
                         text-white
-                        hover:bg-primary-600
+                        hover:bg-gray-500
                         active:scale-95
                         transition-all
                         shadow-md
