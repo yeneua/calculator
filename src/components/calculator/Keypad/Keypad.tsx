@@ -31,7 +31,7 @@ const buttonLayout: ButtonDef[][] = [
         { value: 'C', variant: 'special', label: 'C' },
         { value: '', variant: 'special', icon: 'backspace' },
         { value: '%', variant: 'operator', label: '%' },
-        { value: '/', variant: 'operator', label: '÷' },
+        { value: '/', variant: 'operator', label: '/' },
     ],
     [
         { value: '7', variant: 'number', label: '7' },
