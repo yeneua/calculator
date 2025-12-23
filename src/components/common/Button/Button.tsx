@@ -39,7 +39,7 @@ const variantStyles: Record<ButtonVariant, string> = {
     `,
     operator: `
         bg-primary-500 dark:bg-primary-600
-        text-white
+        text-white dark:text-white
         hover:bg-primary-600 dark:hover:bg-primary-700
         active:bg-primary-700 dark:active:bg-primary-800
     `,
@@ -51,7 +51,7 @@ const variantStyles: Record<ButtonVariant, string> = {
     `,
     special: `
         bg-gray-300 dark:bg-gray-700
-        text-gray-700 dark:text-gray-200
+        text-gray-800 dark:text-gray-200
         hover:bg-gray-400 dark:hover:bg-gray-600
         active:bg-gray-500 dark:active:bg-gray-500
     `,
