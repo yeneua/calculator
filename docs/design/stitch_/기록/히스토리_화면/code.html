@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Calculator History</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4B5EFC", // Requested primary color
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#2E2F38", // Requested background color
+                        "surface-dark": "#4E505F", // Requested surface/card color
+                        "surface-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4E505F;
+            border-radius: 3px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased transition-colors duration-200">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto shadow-2xl bg-background-light dark:bg-background-dark">
+<header class="sticky top-0 z-20 flex items-center bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md px-4 py-4 justify-between border-b border-slate-200 dark:border-slate-700/50">
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700/50 transition-colors text-slate-500 dark:text-slate-300">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h2 class="text-xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white">History</h2>
+</div>
+<button class="flex items-center justify-center px-3 py-1.5 rounded-full hover:bg-primary/10 transition-colors group">
+<span class="material-symbols-outlined text-primary text-xl mr-1 group-hover:scale-110 transition-transform">delete_sweep</span>
+<p class="text-primary text-sm font-bold leading-normal tracking-wide">Clear</p>
+</button>
+</header>
+<div class="px-4 py-4 sticky top-[73px] z-10 bg-background-light dark:bg-background-dark">
+<label class="flex flex-col w-full">
+<div class="relative flex w-full items-center rounded-xl h-12 bg-surface-light dark:bg-surface-dark shadow-sm border border-slate-200 dark:border-transparent focus-within:ring-2 focus-within:ring-primary focus-within:border-primary transition-all">
+<div class="absolute left-4 text-slate-400 dark:text-slate-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">search</span>
+</div>
+<input class="w-full bg-transparent border-none text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-300 px-4 pl-12 h-full text-base font-medium focus:outline-none focus:ring-0 rounded-xl" placeholder="Search calculations..." value=""/>
+<button class="absolute right-3 text-slate-400 dark:text-slate-300 hover:text-primary transition-colors p-1" title="Filter options">
+<span class="material-symbols-outlined text-xl">tune</span>
+</button>
+</div>
+</label>
+</div>
+<main class="flex-1 flex flex-col gap-6 px-4 pb-24">
+<section>
+<div class="flex items-center justify-between mb-3 px-1">
+<h3 class="text-slate-500 dark:text-slate-300 text-xs font-bold uppercase tracking-wider">Today</h3>
+<span class="text-xs text-slate-400 dark:text-slate-200 bg-slate-200 dark:bg-slate-700 px-2 py-0.5 rounded-full">3 items</span>
+</div>
+<div class="flex flex-col gap-3">
+<button class="group w-full text-left bg-surface-light dark:bg-surface-dark p-4 rounded-2xl border border-transparent hover:border-primary/50 dark:hover:border-primary/50 transition-all shadow-sm hover:shadow-md active:scale-[0.99] relative overflow-hidden">
+<div class="absolute top-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-300 text-sm">north_east</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-start">
+<p class="text-slate-800 dark:text-white text-lg font-normal leading-normal font-display tracking-tight">sin(30) + 5^2</p>
+<p class="text-slate-400 dark:text-slate-300 text-xs font-medium mt-1">10:42 AM</p>
+</div>
+<div class="flex items-center justify-end mt-1">
+<span class="text-slate-400 dark:text-slate-400 text-lg mr-2 font-light">=</span>
+<p class="text-primary text-2xl font-bold leading-normal tracking-tight">25.5</p>
+</div>
+</div>
+</button>
+<button class="group w-full text-left bg-surface-light dark:bg-surface-dark p-4 rounded-2xl border border-transparent hover:border-primary/50 dark:hover:border-primary/50 transition-all shadow-sm hover:shadow-md active:scale-[0.99] relative overflow-hidden">
+<div class="absolute top-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-300 text-sm">north_east</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-start">
+<p class="text-slate-800 dark:text-white text-lg font-normal leading-normal font-display tracking-tight">√(144) * 2</p>
+<p class="text-slate-400 dark:text-slate-300 text-xs font-medium mt-1">09:15 AM</p>
+</div>
+<div class="flex items-center justify-end mt-1">
+<span class="text-slate-400 dark:text-slate-400 text-lg mr-2 font-light">=</span>
+<p class="text-primary text-2xl font-bold leading-normal tracking-tight">24</p>
+</div>
+</div>
+</button>
+<button class="group w-full text-left bg-surface-light dark:bg-surface-dark p-4 rounded-2xl border border-transparent hover:border-primary/50 dark:hover:border-primary/50 transition-all shadow-sm hover:shadow-md active:scale-[0.99] relative overflow-hidden">
+<div class="absolute top-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-300 text-sm">north_east</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-start">
+<p class="text-slate-800 dark:text-white text-lg font-normal leading-normal font-display tracking-tight text-wrap break-all">(125 + 75) / 4</p>
+<p class="text-slate-400 dark:text-slate-300 text-xs font-medium mt-1">08:30 AM</p>
+</div>
+<div class="flex items-center justify-end mt-1">
+<span class="text-slate-400 dark:text-slate-400 text-lg mr-2 font-light">=</span>
+<p class="text-primary text-2xl font-bold leading-normal tracking-tight">50</p>
+</div>
+</div>
+</button>
+</div>
+</section>
+<section>
+<div class="flex items-center justify-between mb-3 px-1">
+<h3 class="text-slate-500 dark:text-slate-300 text-xs font-bold uppercase tracking-wider">Yesterday</h3>
+<span class="text-xs text-slate-400 dark:text-slate-200 bg-slate-200 dark:bg-slate-700 px-2 py-0.5 rounded-full">2 items</span>
+</div>
+<div class="flex flex-col gap-3">
+<button class="group w-full text-left bg-surface-light dark:bg-surface-dark p-4 rounded-2xl border border-transparent hover:border-primary/50 dark:hover:border-primary/50 transition-all shadow-sm hover:shadow-md active:scale-[0.99] relative overflow-hidden">
+<div class="absolute top-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-300 text-sm">north_east</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-start">
+<p class="text-slate-800 dark:text-white text-lg font-normal leading-normal font-display tracking-tight">log(100) / 2</p>
+<p class="text-slate-400 dark:text-slate-300 text-xs font-medium mt-1">4:20 PM</p>
+</div>
+<div class="flex items-center justify-end mt-1">
+<span class="text-slate-400 dark:text-slate-400 text-lg mr-2 font-light">=</span>
+<p class="text-primary text-2xl font-bold leading-normal tracking-tight">1</p>
+</div>
+</div>
+</button>
+<button class="group w-full text-left bg-surface-light dark:bg-surface-dark p-4 rounded-2xl border border-transparent hover:border-primary/50 dark:hover:border-primary/50 transition-all shadow-sm hover:shadow-md active:scale-[0.99] relative overflow-hidden">
+<div class="absolute top-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-300 text-sm">north_east</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-start">
+<p class="text-slate-800 dark:text-white text-lg font-normal leading-normal font-display tracking-tight">π * 4^2</p>
+<p class="text-slate-400 dark:text-slate-300 text-xs font-medium mt-1">2:15 PM</p>
+</div>
+<div class="flex items-center justify-end mt-1">
+<span class="text-slate-400 dark:text-slate-400 text-lg mr-2 font-light">=</span>
+<p class="text-primary text-2xl font-bold leading-normal tracking-tight">50.265</p>
+</div>
+</div>
+</button>
+</div>
+</section>
+</main>
+<div class="fixed bottom-6 right-6 z-30">
+<button class="flex items-center justify-center w-14 h-14 rounded-full bg-primary text-white shadow-lg hover:brightness-110 transition-all hover:scale-105 focus:ring-4 focus:ring-primary/30">
+<span class="material-symbols-outlined text-3xl">calculate</span>
+</button>
+</div>
+<div class="fixed bottom-0 w-full bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-lg border-t border-slate-200 dark:border-slate-700/50 z-20 max-w-md">
+<div class="flex justify-around items-center h-16">
+<button class="flex flex-col items-center justify-center w-full h-full text-slate-400 dark:text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">grid_view</span>
+<span class="text-[10px] font-medium mt-1">Keypad</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full text-slate-400 dark:text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">functions</span>
+<span class="text-[10px] font-medium mt-1">Sci</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full text-primary relative">
+<span class="material-symbols-outlined text-2xl fill-current">history</span>
+<span class="text-[10px] font-medium mt-1">History</span>
+<span class="absolute top-3 right-8 w-2 h-2 bg-primary rounded-full"></span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full text-slate-400 dark:text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">settings</span>
+<span class="text-[10px] font-medium mt-1">Settings</span>
+</button>
+</div>
+</div>
+</div>
+
+</body></html>

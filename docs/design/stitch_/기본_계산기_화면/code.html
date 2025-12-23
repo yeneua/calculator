@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Basic Calculator</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4B5EFC","background-light": "#f6f6f8",
+                        "background-dark": "#17171C","surface-dark": "#2E2F38","surface-secondary": "#4E505F","surface-dark-highlight": "#4E505F",},
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "sans": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1.25rem", "3xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>.no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }.calc-btn:active {
+            transform: scale(0.95);
+            transition: transform 0.1s;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-black dark:bg-background-dark font-display text-white h-screen overflow-hidden select-none">
+<div class="relative flex h-full w-full max-w-md mx-auto flex-col justify-between p-5 pb-10">
+<header class="flex items-center justify-center py-4 relative">
+<div class="flex flex-col items-center p-1 px-4 bg-surface-dark rounded-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-gray-400 text-sm">wb_sunny</span>
+<div class="h-6 w-[1px] bg-gray-600"></div>
+<span class="text-sm font-medium tracking-wide text-white uppercase">Standard</span>
+<div class="h-6 w-[1px] bg-gray-600"></div>
+<span class="material-symbols-outlined text-gray-400 text-sm">calculate</span>
+</div>
+</div>
+</header>
+<div class="flex-1 flex flex-col justify-end items-end px-2 mb-8 gap-1">
+<div class="text-gray-400 text-2xl font-light tracking-wide">
+                1,234 + 56
+            </div>
+<div class="text-7xl font-medium tracking-tight text-white break-all text-right leading-tight">
+                1,290
+            </div>
+</div>
+<div class="grid grid-cols-4 gap-4">
+<button class="calc-btn flex items-center justify-center h-20 rounded-3xl bg-surface-secondary text-white text-2xl font-medium hover:brightness-110 transition-all">
+                C
+            </button>
+<button class="calc-btn flex items-center justify-center h-20 rounded-3xl bg-surface-secondary text-white text-2xl font-medium hover:brightness-110 transition-all">
+<span class="material-symbols-outlined" style="font-size: 28px;">exposure</span>
+</button>
+<button class="calc-btn flex items-center justify-center h-20 rounded-3xl bg-surface-secondary text-white text-2xl font-medium hover:brightness-110 transition-all">
+<span class="material-symbols-outlined" style="font-size: 28px;">percent</span>
+</button>
+<button class="calc-btn flex items-center justify-center h-20 rounded-3xl bg-primary text-white text-3xl font-medium hover:bg-primary/90 transition-all">
+<span class="font-display">÷</span>
+</button>
+<button class="calc-btn flex items-center justify-center h-20 rounded-3xl bg-surface-dark text-white text-3xl font-medium hover:bg-surface-dark/80 transition-all">7</button>
+<button class="calc-btn flex items-center justify-center h-20 rounded-3xl bg-surface-dark text-white text-3xl font-medium hover:bg-surface-dark/80 transition-all">8</button>
+<button class="calc-btn flex items-center justify-center h-20 rounded-3xl bg-surface-dark text-white text-3xl font-medium hover:bg-surface-dark/80 transition-all">9</button>
+<button class="calc-btn flex items-center justify-center h-20 rounded-3xl bg-primary text-white text-3xl font-medium hover:bg-primary/90 transition-all">
+<span class="material-symbols-outlined" style="font-size: 28px;">close</span>
+</button>
+<button class="calc-btn flex items-center justify-center h-20 rounded-3xl bg-surface-dark text-white text-3xl font-medium hover:bg-surface-dark/80 transition-all">4</button>
+<button class="calc-btn flex items-center justify-center h-20 rounded-3xl bg-surface-dark text-white text-3xl font-medium hover:bg-surface-dark/80 transition-all">5</button>
+<button class="calc-btn flex items-center justify-center h-20 rounded-3xl bg-surface-dark text-white text-3xl font-medium hover:bg-surface-dark/80 transition-all">6</button>
+<button class="calc-btn flex items-center justify-center h-20 rounded-3xl bg-primary text-white text-3xl font-medium hover:bg-primary/90 transition-all">
+<span class="material-symbols-outlined" style="font-size: 28px;">remove</span>
+</button>
+<button class="calc-btn flex items-center justify-center h-20 rounded-3xl bg-surface-dark text-white text-3xl font-medium hover:bg-surface-dark/80 transition-all">1</button>
+<button class="calc-btn flex items-center justify-center h-20 rounded-3xl bg-surface-dark text-white text-3xl font-medium hover:bg-surface-dark/80 transition-all">2</button>
+<button class="calc-btn flex items-center justify-center h-20 rounded-3xl bg-surface-dark text-white text-3xl font-medium hover:bg-surface-dark/80 transition-all">3</button>
+<button class="calc-btn flex items-center justify-center h-20 rounded-3xl bg-primary text-white text-3xl font-medium hover:bg-primary/90 transition-all">
+<span class="material-symbols-outlined" style="font-size: 28px;">add</span>
+</button>
+<button class="calc-btn flex items-center justify-center h-20 rounded-3xl bg-surface-dark text-white text-3xl font-medium hover:bg-surface-dark/80 transition-all">.</button>
+<button class="calc-btn flex items-center justify-center h-20 rounded-3xl bg-surface-dark text-white text-3xl font-medium hover:bg-surface-dark/80 transition-all">0</button>
+<button class="calc-btn flex items-center justify-center h-20 rounded-3xl bg-surface-dark text-white text-3xl font-medium hover:bg-surface-dark/80 transition-all">
+<span class="material-symbols-outlined" style="font-size: 28px;">backspace</span>
+</button>
+<button class="calc-btn flex items-center justify-center h-20 rounded-3xl bg-primary text-white text-3xl font-medium hover:bg-primary/90 transition-all">
+<span class="material-symbols-outlined" style="font-size: 32px;">equal</span>
+</button>
+</div>
+<div class="flex justify-center mt-6">
+<div class="h-1.5 w-32 bg-gray-700 rounded-full"></div>
+</div>
+</div>
+
+</body></html>
