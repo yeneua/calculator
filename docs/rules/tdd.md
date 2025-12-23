@@ -22,10 +22,22 @@ Core logic includes:
   - Business rules
 
 ## What is NOT Core Logic?
-UI components are exempt from TDD:
+UI components are exempt from TDD and should NOT have automated tests:
 - React components (`src/components/`)
 - Pages (`src/pages/`)
 - UI-specific hooks (e.g., `useTheme`, `useKeyboard`)
+
+**Testing UI Components**:
+- ❌ NO automated tests (no React Testing Library tests)
+- ✅ Manual testing during development
+- ✅ Visual inspection in browser
+- ✅ User acceptance testing
+
+**Rationale**:
+- UI components change frequently during development
+- Visual bugs are better caught by human eyes
+- Automated UI tests are brittle and time-consuming to maintain
+- Focus testing effort on core business logic
 
 ## TDD Process
 
@@ -101,10 +113,14 @@ export default defineConfig({
       functions: 90,
       branches: 85,
       statements: 90,
-      include: ['src/lib/**/*.ts'],
+      // ONLY include core logic
+      include: ['src/lib/**/*.ts', 'src/store/**/*.ts'],
+      // EXCLUDE UI components
       exclude: [
         'src/components/**',
         'src/pages/**',
+        'src/hooks/useTheme.ts',
+        'src/hooks/useKeyboard.ts',
         '**/*.test.ts',
         '**/*.spec.ts',
       ],
@@ -112,6 +128,8 @@ export default defineConfig({
   },
 });
 ```
+
+**Note**: UI components (`src/components/`, `src/pages/`) are intentionally excluded from coverage requirements.
 
 ## Test Structure
 

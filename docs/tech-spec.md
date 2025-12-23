@@ -1754,10 +1754,7 @@ export const measurePerformance = (name: string, fn: () => void) => {
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
     "vite-plugin-pwa": "^0.17.4",
-    "vitest": "^1.0.4",
-    "@testing-library/react": "^14.1.2",
-    "@testing-library/jest-dom": "^6.1.5",
-    "@playwright/test": "^1.40.1"
+    "vitest": "^1.0.4"
   }
 }
 ```
