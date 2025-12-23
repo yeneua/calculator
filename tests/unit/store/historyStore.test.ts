@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, vi } from 'vitest';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { act } from '@testing-library/react';
 import { useHistoryStore } from '@/store/historyStore';
 // HistoryManager mock은 복잡할 수 있으므로, 실제 구현을 사용하거나
